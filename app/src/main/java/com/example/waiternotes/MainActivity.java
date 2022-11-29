@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonCadastroPrato, buttonPedido, buttonListaPratos, btnListaPedido;
+    private Button buttonCadastroPrato, buttonPedido, buttonListaPratos, btnListaPedido, btnSair;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         buttonPedido = findViewById(R.id.btnPedido);
         buttonListaPratos = findViewById(R.id.btnListaPratos);
         btnListaPedido = findViewById(R.id.btnListaPedido);
+        btnSair = findViewById(R.id.btnSair);
 
         buttonCadastroPrato.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity( new Intent( getApplicationContext(), ListaPedidos.class ) );
+            }
+        });
+
+        btnSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

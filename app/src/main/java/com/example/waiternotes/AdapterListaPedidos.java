@@ -46,8 +46,8 @@ public class AdapterListaPedidos extends RecyclerView.Adapter<AdapterListaPedido
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         PedidoModel pedido = listaPedido.get( position );
         holder.nome.setText( pedido.getNomePrato() );
-        holder.garcom.setText( pedido.getGarcom() );
-        holder.mesa.setText( pedido.getMesa() );
+        holder.garcom.setText( "Garçom: " + pedido.getGarcom() );
+        holder.mesa.setText( "Mesa: " + pedido.getMesa() );
     }
 
     @Override

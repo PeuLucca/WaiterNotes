@@ -47,7 +47,7 @@ public class AdapterListaPratos extends RecyclerView.Adapter<AdapterListaPratos.
         PratosModel pratos = listaPratos.get( position );
         holder.nome.setText( pratos.getNome() );
         holder.descricao.setText( pratos.getDescricao() );
-        holder.preco.setText( pratos.getPreco() );
+        holder.preco.setText( "Preço:" + pratos.getPreco() );
     }
 
     @Override
