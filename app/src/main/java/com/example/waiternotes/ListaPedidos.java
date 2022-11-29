@@ -8,41 +8,43 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.waiternotes.helper.DaoPedido;
 import com.example.waiternotes.helper.DaoPratos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaPratos extends AppCompatActivity {
+public class ListaPedidos extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private List<PratosModel> listaPratos = new ArrayList<>();
+    private List<PedidoModel> listaPedidos = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_pratos);
+        setContentView(R.layout.activity_lista_pedidos);
 
-        recyclerView = findViewById(R.id.recyclerVIewListaPratos);
+        recyclerView = findViewById(R.id.recyclerListaPratos);
     }
 
     @Override
     protected void onStart() {
-        carregarListaPratos();
+        carregarListaPedidos();
         super.onStart();
     }
 
-    public void carregarListaPratos(){
+    public void carregarListaPedidos(){
 
-        DaoPratos dao = new DaoPratos(getApplicationContext());
-        listaPratos = dao.listar();
+        DaoPedido dao = new DaoPedido(getApplicationContext());
+        listaPedidos = dao.listar();
 
-        if(listaPratos.isEmpty()){
-            Toast.makeText(getApplicationContext(),"Nenhum prato cadastrado",
+        if(listaPedidos.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Nenhum pedido cadastrado",
                     Toast.LENGTH_SHORT).show();
         }
 
-        AdapterListaPratos adapter = new AdapterListaPratos(listaPratos,getApplicationContext(),recyclerView);
+        AdapterListaPedidos adapter = new AdapterListaPedidos(listaPedidos,getApplicationContext(),recyclerView);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -50,5 +52,4 @@ public class ListaPratos extends AppCompatActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(adapter);
     }
-
 }

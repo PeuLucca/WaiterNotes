@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-
 public class RecycleViewItemClickListener implements RecyclerView.OnItemTouchListener {
 
     private OnItemClickListener mListener;
@@ -59,4 +58,3 @@ public class RecycleViewItemClickListener implements RecyclerView.OnItemTouchLis
 
     }
 }
-

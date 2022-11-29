@@ -35,14 +35,20 @@ public class CadastroPrato extends AppCompatActivity {
                 pratos.setDescricao(descricao.getText().toString());
                 pratos.setPreco(preco.getText().toString());
 
-                if(daoPratos.salvar( pratos )){
-                    Toast.makeText(getApplicationContext(),"Prato cadastrado com sucesso",
+                if(nomePrato.getText().toString().isEmpty() || descricao.getText().toString().isEmpty() ||
+                        preco.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"AVISO\nPreencha todos os campos",
                             Toast.LENGTH_SHORT).show();
-                    finish();
                 }else{
-                    Toast.makeText(getApplicationContext(),"Erro ao cadastrar prato",
-                            Toast.LENGTH_SHORT).show();
-                    finish();
+                    if(daoPratos.salvar( pratos )){
+                        Toast.makeText(getApplicationContext(),"Prato cadastrado com sucesso",
+                                Toast.LENGTH_SHORT).show();
+                        finish();
+                    }else{
+                        Toast.makeText(getApplicationContext(),"Erro ao cadastrar prato",
+                                Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
             }
         });

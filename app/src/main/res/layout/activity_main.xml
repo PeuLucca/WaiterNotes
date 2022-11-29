@@ -8,6 +8,20 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btnListaPedido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="50dp"
+        android:text="Lista de pedido"
+        app:cornerRadius="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListaPratos" />
+
+    <Button
         android:id="@+id/btnListaPratos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -15,8 +29,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="50dp"
         android:text="Lista de pratos"
+        app:cornerRadius="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPedido" />
 
@@ -25,9 +40,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
-        android:text="WaiterNotes"
+        android:text="Waiter Notes"
+        android:textAllCaps="true"
         android:textColor="#1E1E1E"
-        android:textSize="25sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -42,6 +58,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="50dp"
         android:text="Cadastro de prato"
+        app:cornerRadius="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -54,7 +71,19 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="50dp"
         android:text="Pedido"
+        app:cornerRadius="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCadastroPrato" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="by Pedro de Lucca"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WaiterNotes">
         <activity
+            android:name=".AdapterListaPedidos"
+            android:exported="false" />
+        <activity
+            android:name=".ListaPedidos"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroPedido"
+            android:exported="false" />
+        <activity
             android:name=".ListaPratos"
             android:exported="false" />
         <activity

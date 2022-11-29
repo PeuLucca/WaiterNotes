@@ -11,6 +11,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static int VERSION = 1;
     private static String NOME_DB = "waiterNotes";
     public static String TABELA_PRATOS = "pratos";
+    public static String TABELA_PEDIDO = "pedidos";
 
     public DbHelper(@Nullable Context context) {
         super(context, NOME_DB, null, VERSION);
@@ -26,7 +27,14 @@ public class DbHelper extends SQLiteOpenHelper {
                     "descricao TEXT," +
                     "preco TEXT);";
 
+            String sqlPedido = "CREATE TABLE IF NOT EXISTS " + TABELA_PEDIDO +
+                    "(idPedido INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "nomePrato TEXT," +
+                    "garcom TEXT," +
+                    "mesa TEXT);";
+
             db.execSQL(sqlPratos);
+            db.execSQL(sqlPedido);
 
         }catch (Exception e){
             e.printStackTrace();
